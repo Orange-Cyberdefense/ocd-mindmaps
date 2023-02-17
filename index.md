@@ -1,5 +1,11 @@
 # Welcome to Orange Cyberdefense mindmaps
 
+## AD - mindmap 2023 - 02
+
+- Click on the image to view full size
+[![pentest_ad_dark_2023_02](./img/thumbnail_pentest_ad_dark_2023_02.png)](./img/pentest_ad_dark_2023_02.svg)
+
+
 ## AD - mindmap 2022 - 11
 
 - Click on the image to view full size
