@@ -1,0 +1,605 @@
+main_title: Active Directory Mindmap v2025.03
+main_title_logo: ocd
+
+matrix:
+  - ['no_creds'   , 'valid_user', 'authenticated','low_access'        ,'delegation'     ,'admin'           ,'dom_admin']
+  - ['low_hanging', 'mitm'      , ''             ,'know_vuln_auth'    ,'adcs'           ,'lat_move'        ,'trusts']
+  - ['authors'    , 'crack_hash',''              ,'acl'               ,'sccm'           ,''                ,'persistence']
+
+tools:
+  nslookup:
+    link: https://linux.die.net/man/1/nslookup
+  tftp:
+    link: https://linux.die.net/man/1/tftp
+  nmcli:
+    link: https://linux.die.net/man/1/nmcli
+  dig:
+    link: https://linux.die.net/man/1/dig
+  smbclient:
+    link: https://linux.die.net/man/1/smbclient
+  ldapsearch:
+    link: https://linux.die.net/man/1/ldapsearch
+  nxc:
+    icon: nxc
+    link: https://github.com/Pennyw0rth/NetExec
+  nmap:
+    icon: nmap
+    link: https://github.com/nmap/nmap
+  Get-ADDefaultDomainPasswordPolicy:
+    icon: ps1
+    link: https://learn.microsoft.com/en-us/powershell/module/activedirectory/get-addefaultdomainpasswordpolicy
+  ldeep:
+    icon: github
+    link: https://github.com/franc-pentest/ldeep
+  ldapsearch-ad.py:
+    icon: github
+    link: https://github.com/yaap7/ldapsearch-ad
+  Get-ADFineGainedPasswordPolicy:
+    icon: ps1
+    link: https://learn.microsoft.com/en-us/powershell/module/activedirectory/get-adfinegrainedpasswordpolicy
+  sprayhound:
+    icon: github
+    link: https://github.com/Hackndo/sprayhound
+  kerbrute:
+    icon: github
+    link: https://github.com/ropnop/kerbrute
+  MATCH:
+    icon: bloodhound
+    link: https://github.com/SpecterOps/BloodHound
+  GetNPUsers.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/GetNPUsers.py
+  Rubeus.exe:
+    icon: rubeus
+    link: https://github.com/GhostPack/Rubeus
+  GetUserSPNs.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/GetUserSPNs.py
+  CVE-2022-33679.py:
+    icon: github
+    link: https://github.com/Bdenneu/CVE-2022-33679
+  enum4linux-ng.py:
+    icon: github
+    link: https://github.com/cddmp/enum4linux-ng
+  pxethief.py:
+    icon: github
+    link: https://github.com/MWR-CyberSec/PXEThief
+  timeroast.py:
+    icon: github
+    link: https://github.com/SecuraBV/Timeroast
+  mitm6:
+    icon: github
+    link: https://github.com/dirkjanm/mitm6
+  petitpotam.py:
+    icon: github
+    link: https://github.com/topotam/PetitPotam
+  bettercap:
+    icon: bettercap
+    link: https://www.bettercap.org/
+  responder:
+    icon: github
+    link: https://github.com/lgandx/Responder
+  hashcat:
+    icon: hashcat
+    link: https://hashcat.net/hashcat/
+  john:
+    icon: john
+    link: https://github.com/openwall/john
+  findDelegation.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/findDelegation.py
+  sccmwtf.py:
+    icon: github
+    link: https://github.com/xpn/sccmwtf/tree/main
+  mimikatz:
+    icon: mimikatz
+    link: https://github.com/gentilkiwi/mimikatz
+  secretsdump.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/secretsdump.py
+  certipy:
+    icon: github
+    link: https://github.com/ly4k/Certipy
+  pywhisker.py:
+    icon: github
+    link: https://github.com/ShutdownRepo/pywhisker
+  targetedKerberoast.py:
+    icon: github
+    link: https://github.com/ShutdownRepo/targetedKerberoast
+  gMSADumper.py:
+    icon: github
+    link: https://github.com/micahvandeusen/gMSADumper
+  Get-DomainObjectAcl:
+    icon: ps1
+    link: https://github.com/PowerShellMafia/PowerSploit
+  Get-DomainOU:
+    icon: ps1
+    link: https://github.com/PowerShellMafia/PowerSploit
+  certutil:
+    icon: microsoft
+    link: https://learn.microsoft.com/fr-fr/windows-server/administration/windows-commands/certutil
+  certify:
+    icon: github
+    link: https://github.com/GhostPack/Certify
+  ntlmrelayx.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/ntlmrelayx.py
+  gettgtpkinit.py:
+    icon: github
+    link: https://github.com/dirkjanm/PKINITtools/blob/master/gettgtpkinit.py
+  smbclient.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/smbclient.py
+  msf>:
+    icon: metasploit
+    link: https://docs.metasploit.com/
+  GetADUsers.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/GetADUsers.py
+  manspider:
+    icon: github
+    link: https://github.com/blacklanternsecurity/MANSPIDER
+  bloodhound-python:
+    icon: github
+    link: https://github.com/dirkjanm/BloodHound.py
+  rusthound:
+    icon: rusthound
+    link: https://github.com/NH-RED-TEAM/RustHound
+  rusthound-ce:
+    icon: rusthoundce
+    link: https://github.com/g0h4n/RustHound-CE
+  sharphound.exe:
+    icon: bloodhound
+    link: https://github.com/SpecterOps/SharpHound
+  ldapdomaindump.py:
+    icon: github
+    link: https://github.com/dirkjanm/ldapdomaindump
+  adidnsdump:
+    icon: github
+    link: https://github.com/dirkjanm/adidnsdump
+  AD-miner:
+    icon: adminer
+    link: https://github.com/AD-Security/AD_Miner
+  Ping-Castle.exe:
+    icon: ps1
+    link: https://www.pingcastle.com/download/
+  Import-Module:
+    icon: ps1
+  ntlm_theft.py:
+    icon: github
+    link: https://github.com/Greenwolf/ntlm_theft
+  dnstool.py:
+    icon: github
+    link: https://github.com/dirkjanm/krbrelayx/blob/master/dnstool.py
+  printerbug.py:
+    icon: github
+    link: https://github.com/dirkjanm/krbrelayx/blob/master/printerbug.py
+  coercer.py:
+    icon: coercer
+    link: https://github.com/p0dalirius/Coercer
+  installutil.exe:
+    icon: microsoft
+    link: https://lolbas-project.github.io/lolbas/Binaries/Installutil/
+  MsBuild.exe:
+    icon: microsoft
+    link: https://lolbas-project.github.io/lolbas/Binaries/Msbuild/
+  msdt.exe:
+    icon: microsoft
+    link: https://lolbas-project.github.io/lolbas/Binaries/Msdt/
+  wsreset.exe:
+    icon: microsoft
+    link: https://lolbas-project.github.io/lolbas/Binaries/Wsreset/
+  winPEASany_ofs.exe:
+    icon: winpeas
+    link: https://github.com/peass-ng/PEASS-ng/blob/master/winPEAS/winPEASexe/README.md
+  KrbRelayUp.exe:
+    icon: github
+    link: https://github.com/Dec0ne/KrbRelayUp
+  findSMB2UPTime.py:
+    icon: github
+    link: https://github.com/SpiderLabs/Responder/blob/master/tools/FindSMB2UPTime.py
+  ms14-068.py:
+    icon: github
+    link: https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS14-068/pykek/ms14-068.py
+  goldenPac.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/goldenPac.py
+  Get-GPPPassword.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/Get-GPPPassword.py
+  privexchange.py:
+    icon: github
+    link: https://github.com/dirkjanm/PrivExchange
+  noPac.exe:
+    icon: github
+    link: https://github.com/cube0x0/noPac
+  printnightmare.py:
+    icon: github
+    link: https://github.com/ly4k/PrintNightmare/blob/main/printnightmare.py
+  dnscmd.exe:
+    icon: microsoft
+    link: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/dnscmd
+  sc:
+    icon: microsoft
+    link: https://learn.microsoft.com/en-us/windows/win32/services/controlling-a-service-using-sc
+  Get-LapsADPassword:
+    icon: ps1
+    link: https://learn.microsoft.com/en-us/powershell/module/laps/get-lapsadpassword?view=windowsserver2025-ps
+  zerologon-scan:
+    icon: github
+    link: https://github.com/SecuraBV/CVE-2020-1472
+  cve-2020-1472-exploit.py:
+    icon: github
+    link: https://github.com/dirkjanm/CVE-2020-1472/blob/master/cve-2020-1472-exploit.py
+  getST.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/getST.py
+  getTGT.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/getTGT.py
+  addcomputer.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/addcomputer.py
+  reg.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/reg.py
+  rbcd.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/rbcd.py
+  mssqlclient.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/mssqlclient.py
+  dcomexec.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/dcomexec.py
+  ticketConverter.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/ticketConverter.py
+  tgssub.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/pull/1256
+  certify.exe:
+    icon: github
+    link: https://github.com/GhostPack/Certify
+  sccmhunter.py:
+    icon: sccmhunter
+    link: https://github.com/garrettfoster13/sccmhunter
+  SharpSCCM.exe:
+    icon: sharpsccm
+    link: https://github.com/Mayyhem/SharpSCCM
+  dploot.py:
+    icon: github
+    link: https://github.com/zblurx/dploot
+  SCCMSecrets.py:
+    icon: github
+    link: https://github.com/synacktiv/SCCMSecrets
+  sccm-http-looter:
+    icon: github
+    link: https://github.com/badsectorlabs/sccm-http-looter
+  ticketer.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/ticketer.py
+  raiseChild.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/raiseChild.py
+  lookupsid.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/lookupsid.py
+  donpapi:
+    icon: donpapi
+    link: https://github.com/login-securite/DonPAPI
+  psexec.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/psexec.py
+  atexec.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/atexec.py
+  smbexec.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/smbexec.py
+  wmiexec.py:
+    icon: impacket
+    link: https://github.com/fortra/impacket/blob/master/examples/wmiexec.py
+  evil-winrm:
+    icon: evilwinrm
+    link: https://github.com/Hackplayers/evil-winrm
+  cmloot.py:
+    icon: github
+    link: https://github.com/shelltrail/cmloot/tree/main
+  ysoserial.jar:
+    icon: ysoserial
+    link: https://github.com/frohoff/ysoserial
+  PingCastle.exe:
+    icon: pingcastle
+    link: https://www.pingcastle.com/
+  Get-ChildItem:
+    icon: ps1
+    link: https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.management/get-childitem
+  mshta.exe:
+    icon: microsoft
+    link: https://lolbas-project.github.io/lolbas/Binaries/Mshta/
+  .\PrivescCheck.ps1:
+    icon: ps1
+    link: https://github.com/itm4n/PrivescCheck
+  findstr:
+    icon: microsoft
+    link: https://lolbas-project.github.io/lolbas/Binaries/Findstr/
+  vssadmin:
+    icon: microsoft
+    link: https://learn.microsoft.com/fr-fr/windows-server/administration/windows-commands/vssadmin
+  policysecretunobfuscate.py:
+    icon: github
+    link: https://github.com/xpn/sccmwtf/blob/main/policysecretunobfuscate.py
+  PPLdump64.exe:
+    icon: github
+    link: https://github.com/itm4n/PPLdump
+  procdump.exe:
+    icon: microsoft
+    link: https://learn.microsoft.com/fr-fr/sysinternals/downloads/procdump
+  reg:
+    icon: microsoft
+    link: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg
+  lsassy:
+    icon: github
+    link: https://github.com/login-securite/lsassy
+  SharpDPAPI.exe:
+    icon: github
+    link: https://github.com/GhostPack/SharpDPAPI
+  DPAPImk2john.py:
+    icon: github
+    link: https://github.com/openwall/john/blob/bleeding-jumbo/run/DPAPImk2john.py
+  irs.exe:
+    icon: github
+    link: https://github.com/zblurx/impersonate-rs
+  masky:
+    icon: github
+    link: https://github.com/Z4kSec/Masky/tree/master
+  psexec.exe:
+    icon: microsoft
+    link: https://learn.microsoft.com/fr-fr/sysinternals/downloads/psexec
+  psexecsvc.py:
+    icon: github
+    link: https://github.com/sensepost/susinternals
+  Enter-PSSession:
+    icon: ps1
+    link: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession
+  xfreerdp:
+    link: https://linux.die.net/man/1/xfreerdp
+  smbclient-ng.py:
+    icon: github
+    link: https://github.com/p0dalirius/smbclient-ng
+  impacket:
+    icon: impacket
+    link: https://github.com/fortra/impacket
+  getnthash.py:
+    icon: github
+    link: https://github.com/dirkjanm/PKINITtools/blob/master/getnthash.py
+  passthecert.py:
+    icon: github
+    link: https://github.com/AlmondOffSec/PassTheCert
+  nltest.exe:
+    icon: microsoft
+    link: https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731935(v=ws.11)
+  ([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()).GetAllTrustRelationships():
+    icon: ps1
+  Get-DomainTrust:
+    icon: github
+    link: https://github.com/PowerShellMafia/PowerSploit
+  Get-DomainTrustMapping:
+    icon: github
+    link: https://github.com/PowerShellMafia/PowerSploit
+  Get-DomainSID:
+    icon: github
+    link: https://github.com/PowerShellMafia/PowerSploit
+  Get-SQLServerLinkCrawl:
+    icon: powerupsql
+    link: https://github.com/NetSPI/PowerUpSQL
+  PowerShell:
+    icon: ps1
+  Pcredz:
+    icon: github
+    link: https://github.com/lgandx/PCredz
+  OUned.py:
+    icon: github
+    link: https://github.com/synacktiv/OUned
+  SCCMHound.exe:
+    icon: github
+    link: https://github.com/CrowdStrike/sccmhound
+  regsecrets.py:
+    icon: github
+    link: https://github.com/fortra/impacket/pull/1898
+  dpapidump.py:
+    icon: github
+    link: https://github.com/fortra/impacket/pull/1898
+  SOAPHound.exe:
+    icon: soaphound
+    link: https://github.com/FalconForceTeam/SOAPHound
+  certsync:
+    icon: github
+    link: https://github.com/zblurx/certsync
+  VeeamHax.exe:
+    icon: github
+    link: https://github.com/sfewer-r7/CVE-2023-27532
+  CVE-2023-27532:
+    icon: github
+    link: https://github.com/horizon3ai/CVE-2023-27532
+  CVE-2024-29849.py:
+    icon: github
+    link: https://github.com/sinsinology/CVE-2024-29849
+  CVE-2024-29855.py:
+    icon: github
+    link: https://github.com/sinsinology/CVE-2024-29855/
+  cve_2023_41320.py:
+    icon: github
+    link: https://github.com/Guilhem7/CVE_2023_41320
+  CVE-2024-40711.exe:
+    icon: github
+    link: https://github.com/watchtowrlabs/CVE-2024-40711
+  smbmap.py:
+    icon: github
+    link: https://github.com/ShawnDEvans/smbmap
+  proxyshell_rce.py:
+    icon: github
+    link: https://github.com/dmaasland/proxyshell-poc
+  poc_aug3.py:
+    icon: github
+    link: https://github.com/testanull/ProxyNotShell-PoC/
+  krbrelayx.py:
+    icon: github
+    link: https://github.com/dirkjanm/krbrelayx
+  nuclei:
+    icon: nuclei
+    link: https://github.com/projectdiscovery/nuclei
+  Mayfly:
+    icon: x
+    link: https://x.com/M4yFly
+  Viking:
+    icon: x
+    link: https://x.com/Vikingfr
+  Sant0rryu:
+    icon: x
+    link: https://x.com/Sant0rryu
+  Jenaye:
+    icon: x
+    link: https://x.com/jenaye_fr
+  Daathk:
+    icon: x
+    link: https://x.com/Daahtk
+  ocd-mindmaps:
+    icon: github
+    link: https://github.com/Orange-Cyberdefense/ocd-mindmaps
+
+color_id:
+  nocreds: "#D0CEE2"
+  crack: "#f08c00"
+  valid_user: "#66B2FF"
+  creds: "#00ff00"
+  lat: "#868e96"
+  mitm: "#ffff00"
+  low_hanging: "#ebfbee"
+  delegation: "#099268"
+  da: "#E51400"
+  acl: "#0050EF"
+  adcs: "#990099"
+  admin: "#FAD9D5"
+  low: "#D0CEE2"
+  sccm: "#ebfbee"
+  cve: "#FAD7AC"
+  trusts: "#6D8764"
+  persistence: "#BC7634"
+  authors: "#DDDDDD"
+
+container_color:
+  ACLs/ACEs permissions: acl
+  ADCS: adcs
+  Admin access: admin
+  Crack hash: crack
+  Valid Credentials (cleartext creds, nt hash, kerberos ticket): creds
+  Kerberos Delegation: delegation
+  Domain admin: da
+  Know vulnerabilities authenticated: cve
+  Lateral Move: lat
+  Low access (Privilege escalation): low
+  Quick Compromise: low_hanging
+  Man In The Middle (Listen and Relay): mitm
+  No Credentials: nocreds
+  Persistence: persistence
+  SCCM: sccm
+  Trusts: trusts
+  Valid user (no password): valid_user
+  Authors: authors
+
+out:
+  Clear text Credentials: creds
+  Hash found ASREP: crack
+  Hash found ASREQ: crack
+  Hash found TGS: crack
+  Lat move PTT: lat
+  Vulnerable host: low_hanging
+  Username: valid_user
+  poisoning SMB: mitm
+  poisoning LDAP: mitm
+  poisoning HTTP: mitm
+  Coerce SMB: mitm
+  PXE Hash: crack
+  Credentials (NAA account): creds
+  timeroast hash: crack
+  Hash NTLMv1 or NTLMv2: crack
+  NTLMv1: crack
+  NTLMv2: crack
+  Credentials (ldap/http): creds
+  RBCD: delegation
+  Shadow Credentials: lat
+  Domain admin: da
+  LDAP SHELL: lat
+  SMB Socks: lat
+  see LDAP(S): mitm
+  DCSYNC: acl
+  ESC8: adcs
+  WSUS: lat
+  MSSQL Socks: lat
+  Admin: admin
+  Low access: low
+  Scroll shares: lat
+  ACL: acl
+  Delegation: delegation
+  New targets (low hanging fruit): low_hanging
+  ADCS Exploitation: adcs
+  SCCM Exploitation: sccm
+  Hash TGS: crack
+  HTTP Coerce: mitm
+  SMB Coerce: mitm
+  SMB NTLM Coerce: mitm
+  Lateral move: lat
+  know vulnerabilities: low_hanging
+  PTT: lat
+  PassTheHash: lat
+  PassTheTicket: lat
+  PassTheCertificate: lat
+  Clear text move: lat
+  NTLM: crack
+  User + Pass: creds
+  MsCache 2: crack
+  DPAPImk: crack
+  Pass The Hash /Ticket/Certificate: lat
+  Low access (without applocker): low
+  User Account: creds
+  Web enrollement: adcs
+  Vulnerable template: adcs
+  Vulnerable CA: adcs
+  Misconfigured ACL: adcs
+  Vulnerable PKI Object AC: adcs
+  LDAP shell: lat
+  Pass the Hash: lat
+  Pass the ticket: lat
+  ESC3: adcs
+  Pass the certificate: lat
+  Pass The Certificate (PKINIT): lat
+  Pass the certificate (only Schannel): lat
+  ESC7 Manage certificate: adcs
+  ESC1: adcs
+  reset accountB UPN: adcs
+  DCsync: lat
+  ESC10  Case1: adcs
+  Domain Admin: da
+  Authority/System: admin
+  Credentials: creds
+  Crack hash: crack
+  shadow credentials: acl
+  User with clear text pass: creds
+  Hash found (TGS): crack
+  Kerberos TGT: lat
+  Kerberos TGS: lat
+  lat move (creds/pth/...): lat
+  unconstrained delegation: delegation
+  ADCS: adcs
+  PXE: nocreds
+  NAA credentials: creds
+  Relay ntlm: mitm
+  Admin on Site system: admin
+  MSSQL: lat
+  Low Access: low
+  COERCE SMB: mitm
+  Trust: trusts
+  SCCM ADMIN: sccm
+  Users sessions: lat

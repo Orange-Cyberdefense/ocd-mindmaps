@@ -1,0 +1,21 @@
+main_title: Mindmap Demo
+main_title_logo: ocd
+
+matrix:
+  - ['example']
+
+tools:
+  excalidraw:
+    icon: github
+    link: https://excalidraw.com/
+
+color_id:
+  demo: "#D0CEE2"
+  mindmap: "#FF0000"
+
+container_color:
+  Container title: demo
+
+out:
+  out box: demo
+  Mindmap: mindmap
