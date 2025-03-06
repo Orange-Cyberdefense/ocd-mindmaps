@@ -4,6 +4,7 @@
 - `certutil -v -dsTemplate`
 - `certify.exe find [ /vulnerable]`
 - `certipy find -u <user>@<domain> -p <password> -dc-ip <dc_ip>`
+- `ldeep ldap -u <user> -p <password> -d <domain> -s <dc_ip> templates`
 - Get PKI objects information
   - `certify.exe pkiobjects`
 - Display CA information

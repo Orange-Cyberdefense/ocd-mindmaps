@@ -6,11 +6,11 @@
     - `nxc smb <dc_ip> -u '<user>' -p '<password>' --pass-pol`
       [https://www.thehacker.recipes/ad/recon/password-policy](https://www.thehacker.recipes/ad/recon/password-policy)
     - `Get-ADDefaultDomainPasswordPolicy`
-    - `ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> auth_policies`
+    - `ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> domain_policy
   - Fined Policy (Privileged)
     - `ldapsearch-ad.py --server <dc> -d <domain> -u <user> -p <pass> --type pass-pols`
     - `Get-ADFineGainedPasswordPolicy -filter *`
-    - `ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> auth_policies`
+    - `ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> pso   # can also be runned with a low priv account but less information will be available`
 - ⚠️ user == password >>> Clear text Credentials
   - `nxc smb <dc_ip> -u <users.txt> -p <passwords.txt> --no-bruteforce --continue-on-success`
   - `sprayhound -U <users.txt> -d <domain> -dc  <dc_ip>   # add --lower to lowercase and --upper to uppercase. Add nothing to get only user=pass`
