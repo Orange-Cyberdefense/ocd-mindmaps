@@ -66,6 +66,7 @@ class ParserMD:
         level = 0
         id = 0
         for line in md_data:
+            #print(f'[+] parse line : {line}')
             cve = False
             id = id + 1
             out = []

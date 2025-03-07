@@ -603,3 +603,4 @@ out:
   Trust: trusts
   SCCM ADMIN: sccm
   Users sessions: lat
+  SMB Kerberos coerce: mitm
