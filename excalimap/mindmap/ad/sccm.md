@@ -4,7 +4,6 @@
 - `sccmhunter.py find -u <user> -p <password> -d <domain> -dc-ip <dc_ip> -debug`
   - `sccmhunter.py show -all`
 - `ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> sccm`
-- `ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> search "(objectclass=mssmsmanagementpoint)" dnshostname,msSMSSiteCode`
 - `nxc smb <sccm_server> -u <user> -p <password> -d <domain> --shares`
  
 ## Creds-1 No credentials >>> NAA credentials || User + Pass
