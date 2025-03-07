@@ -357,6 +357,12 @@ tools:
   psexec.exe:
     icon: microsoft
     link: https://learn.microsoft.com/fr-fr/sysinternals/downloads/psexec
+  tscon.exe:
+    icon: microsoft
+    link: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/tscon
+  query:
+    icon: microsoft
+    link: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/query
   psexecsvc.py:
     icon: github
     link: https://github.com/sensepost/susinternals
@@ -394,6 +400,9 @@ tools:
   Get-SQLServerLinkCrawl:
     icon: powerupsql
     link: https://github.com/NetSPI/PowerUpSQL
+  azuread_decrypt_msol_v2.ps1:
+    icon: ps1
+    link: https://gist.github.com/xpn/f12b145dba16c2eebdd1c6829267b90c
   PowerShell:
     icon: ps1
   Pcredz:
@@ -604,3 +613,4 @@ out:
   SCCM ADMIN: sccm
   Users sessions: lat
   SMB Kerberos coerce: mitm
+  RDP: lat

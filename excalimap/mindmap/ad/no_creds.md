@@ -25,7 +25,7 @@
 
 ## Enumerate LDAP >>> Username
 - `nmap -n -sV --script 'ldap*' and not brute -p 389 <dc_ip>`
-- `ldapsearch -x -h <dc_ip> -s base`
+- `ldapsearch -x -H <dc_ip> -s base`
 
 ## Enumerate Users >>> Username
 - `nxc smb <dc_ip> --users`
