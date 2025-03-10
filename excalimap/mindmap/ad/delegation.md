@@ -7,8 +7,8 @@
     - `MATCH (c:Computer {unconstraineddelegation:true}) RETURN c`
     - `MATCH (c:User {unconstraineddelegation:true}) RETURN c`
   - Constrained
-    - `MATCH (c:Computer), (t:Computer), p=((c)-[:AllowedToDelegate]->(t)) RETURN p`
-    - `MATCH (u:User), (c:Computer {name: "<MYTARGET.FQDN>"}), p=shortestPath((u)-[*1..]->(c)) RETURN p`
+    - `MATCH p=((c:Base)-[:AllowedToDelegate]->(t:Computer)) RETURN p`
+    - `MATCH p=shortestPath((u:User)-[*1..]->(c:Computer {name: "<MYTARGET.FQDN>"})) RETURN p`
 
 ## Unconstrained delegation >>> Kerberos TGT >>> PassTheTicket
 - UAC: ADS_UF_TRUSTED_FOR_DELEGATION
