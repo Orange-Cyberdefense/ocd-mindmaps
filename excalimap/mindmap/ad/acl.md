@@ -58,7 +58,8 @@
   - `msf> use post/windows/gather/credentials/enum_laps`
 
 ## GPO
-- `MATCH (gr:Group), (gp:GPO), p=((gr)-[:GenericWrite]->(gp)) RETURN p`
+- Who can control GPOs
+  - `MATCH p=((n:Base)-[]->(gp:GPO)) RETURN p`
 - SID of principals that can create new GPOs in the domain
   - `Get-DomainObjectAcl -SearchBase "CN=Policies,CN=System,DC=blah,DC=com" -ResolveGUIDs  | ? { $_.ObjectAceType -eq "Group-Policy-Container" } | select ObjectDN, ActiveDirectoryRights, SecurityIdentifier | fl`
 - Return the principals that can write to the GP-Link attribute on OUs
