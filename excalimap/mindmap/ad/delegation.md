@@ -2,7 +2,7 @@
 
 ## Find delegation
 - `findDelegation.py "<domain>"/"<user>":"<password>"`
-- With Bloodhound
+- With BloodHound
   - Unconstrained
     - `MATCH (c:Computer {unconstraineddelegation:true}) RETURN c`
     - `MATCH (c:User {unconstraineddelegation:true}) RETURN c`
