@@ -14,7 +14,7 @@
   - `rusthound -d <domain_to_enum> -u '<user>@<domain>' -p '<password>' -o <outfile.zip> -z`
   - `import-module sharphound.ps1;invoke-bloodhound -collectionmethod all -domain <domain>`
   - `sharphound.exe -c all -d <domain>`
-- Bloodhound-ce >>> ACL || Delegation || Username
+- Bloodhound CE >>> ACL || Delegation || Username
   - `bloodhound-python -d <domain> -u <user> -p <password> -gc <dc> -c all`
   - `rusthound-ce -d <domain_to_enum> -u '<user>@<domain>' -p '<password>' -o <outfile.zip> -z --ldap-filter=(objectGuid=*)`
   - `sharphound.exe -c all -d <domain>`
