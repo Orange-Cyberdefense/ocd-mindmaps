@@ -6,6 +6,8 @@
 - `Get-DomainTrust -Domain <domain>`
 - `Get-DomainTrustMapping`
 - `ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> trusts`
+- `sharphound.exe -c trusts -d <domain>`
+  - `MATCH p=(:Domain)-[:TrustedBy]->(:Domain) RETURN p`
 - Get Domains SID
   - `Get-DomainSID -Domain <domain> Get-DomainSID -Domain <target_domain>` 
   - `lookupsid.py -domain-sids <domain>/<user>:<password>'@<dc> 0 lookupsid.py -domain-sids <domain>/<user>:<password>'@<target_dc> 0`
