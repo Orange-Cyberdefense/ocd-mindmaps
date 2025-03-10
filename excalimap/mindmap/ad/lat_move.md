@@ -86,8 +86,8 @@
 ## MSSQL
 - find mssql access
   - `nxc mssql <ip> -u <user> -p <password> -d <domain>` >>> MSSQL
-  - `MATCH p=(u:User)-[:SQLAdmin]->(c:Computer) RETURN p` >>> MSSQL
 - Users or Computers with SQL admin
+- `MATCH p=(u:Base)-[:SQLAdmin]->(c:Computer) RETURN p` >>> MSSQL
 - `mssqlclient.py -windows-auth <domain>/<user>:<password>@<ip>`
   - `enum_db`
   - `enable_xp_cmdshell`
