@@ -47,8 +47,8 @@
 - `nxc ldap <ip> -u <user> -p <pass> --gmsa`
 - `ldeep ldap -u <user> -p <password> -d <domain> -s ldaps://<dc_ip> gmsa`
 
-## Get laps passwords
-- who can read LAPS
+## Get LAPS passwords
+- Who can read LAPS
   - `MATCH p=(g:Base)-[:ReadLAPSPassword]->(c:Computer) RETURN p`
 - Read LAPS >>> Admin
   - `Get-LapsADPassword -DomainController <ip_dc> -Credential <domain>\<login> | Format-Table -AutoSize`
