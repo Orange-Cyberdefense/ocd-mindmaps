@@ -44,6 +44,7 @@
   - `bettercap`
 - ⚠️ ARP Poisoning
   - `bettercap`
+  - `ASRepCatcher relay -dc <dc_ip>` >>> Hash found ASREQ
   - `asreqroast`
     - `Pcredz -i <interface> -v` >>> Hash found ASREQ
 
