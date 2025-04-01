@@ -24,7 +24,7 @@
 - `smbclient -U '%' -L //<ip>`
 
 ## Enumerate LDAP >>> Username
-- `nmap -n -sV --script 'ldap*' and not brute -p 389 <dc_ip>`
+- `nmap -n -sV --script 'ldap* and not brute' -p 389 <dc_ip>`
 - `ldapsearch -x -H <dc_ip> -s base`
 
 ## Enumerate Users >>> Username
