@@ -24,13 +24,13 @@
 - `smbclient -U '%' -L //<ip>`
 
 ## Enumerate LDAP >>> Username
-- `nmap -n -sV --script 'ldap*' and not brute -p 389 <dc_ip>`
+- `nmap -n -sV --script 'ldap* and not brute' -p 389 <dc_ip>`
 - `ldapsearch -x -H <dc_ip> -s base`
 
 ## Enumerate Users >>> Username
 - `nxc smb <dc_ip> --users`
 - `nxc smb <dc_ip> --rid-brute 10000 # bruteforcing RID`
-- `net rpc group members 'Domain Users' -W '<domain> -l <ip> -U '%'`
+- `net rpc group members 'Domain Users' -W '<domain>' -l <ip> -U '%'`
 
 ## Bruteforce users >>> Username
 - `kerbrute userenum -d <domain> <userlist>`
