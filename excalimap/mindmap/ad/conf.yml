@@ -43,6 +43,9 @@ tools:
   kerbrute:
     icon: github
     link: https://github.com/ropnop/kerbrute
+  nauth.py:
+    icon: github
+    link: https://github.com/sud0Ru/NauthNRPC
   MATCH:
     icon: bloodhound
     link: https://github.com/SpecterOps/BloodHound

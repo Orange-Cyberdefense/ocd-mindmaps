@@ -34,6 +34,7 @@
 
 ## Bruteforce users >>> Username
 - `kerbrute userenum -d <domain> <userlist>`
+- `nauth.py -t <dc_ip> -u <userlist>`
 - `nmap -p 88 --script=krb5-enum-users --script-args="krb5-enum-users.realm= '<domain>',userdb=<user_list_file>" <dc_ip>`
 
 ## Poisoning >>> poisoning SMB || poisoning LDAP || poisoning HTTP
