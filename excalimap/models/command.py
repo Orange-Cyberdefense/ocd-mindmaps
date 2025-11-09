@@ -1,4 +1,5 @@
 import math
+import re
 
 from config import Config
 from models.mapobject import MapObject
@@ -24,16 +25,25 @@ class Command(MapObject):
         text_padding = 5
         # end_x and end_y will be minimum to element size
 
-        calc_width = text_padding + Config.image_width + text_padding + math.ceil(Utils.len_text(self.text) * 8.75)
+        lines = re.split(r'(?<!\\)\n', self.text)
+        longest_line = max(lines, key=lambda s: Utils.len_text(s))
+        longest_len = Utils.len_text(longest_line)
+
+        calc_width = text_padding + Config.image_width + text_padding + math.ceil(longest_len * 10)
         self.object_width = max(self.object_width, calc_width)
+
+        line_count = self.text.count("\n") + 1
+        per_line = 25
+        dynamic_height = max(Config.command_height, line_count * per_line)
+
         end_x = x + self.object_width
-        end_y = y + Config.command_height
+        end_y = y + dynamic_height
 
         # draw all the content
         elements, end_x, end_y = self.draw_child(elements, x, y, end_x, end_y)
         total_size = end_y - y
         center_y = y + total_size / 2
-        title_y = center_y - Config.command_height / 2
+        title_y = center_y - dynamic_height / 2
 
         # draw out
         elements, out_end_x, out_end_y = self.draw_out(elements, y, center_y, total_size, end_x, end_y, Config.default_out_color)
@@ -81,7 +91,7 @@ class Command(MapObject):
                        "x": x,
                        "y": title_y,
                        "width": self.object_width,
-                       "height": Config.command_height,
+                       "height": dynamic_height,
                        "angle": 0,
                        "strokeColor": Config.border_color,
                        "backgroundColor": background_color,
@@ -108,7 +118,7 @@ class Command(MapObject):
                        "x": x + text_padding,
                        "y": title_y,
                        "width": self.object_width-5,
-                       "height": Config.command_height,
+                       "height": dynamic_height,
                        "angle": 0,
                        "strokeColor": text_color,
                        "backgroundColor": None,

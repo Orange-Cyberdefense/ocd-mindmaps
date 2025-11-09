@@ -99,7 +99,7 @@ class ParserMD:
                                 out[0].out[-1].out = [new_out]
                         id_out += 1
                     column += 1
-                line = line.split('>>>')[0]
+                line = line.split('>>>')[0].rstrip()
 
             if "@CVE@" in line:
                 cve = True

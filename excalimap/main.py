@@ -9,6 +9,29 @@ from parsermd import ParserMD
 from utils import Utils
 from types import SimpleNamespace
 
+def fix_broken_container_ids(elements):
+    id_map = {el.get("id"): el for el in elements if isinstance(el, dict) and "id" in el}
+    MAX_DIST = 300
+
+    for el in elements:
+        if not isinstance(el, dict):
+            continue
+        cid = el.get("containerId")
+        if not cid:
+            continue
+
+        parent = id_map.get(cid)
+        if parent is None or parent.get("isDeleted") or parent.get("type") == "text":
+            el["containerId"] = None
+            continue
+
+        ex, ey = el.get("x"), el.get("y")
+        px, py = parent.get("x"), parent.get("y")
+        if all(isinstance(v, (int, float)) for v in (ex, ey, px, py)):
+            if abs(ex - px) > MAX_DIST or abs(ey - py) > MAX_DIST:
+                el["containerId"] = None
+
+
 def draw(matrix, main_title="", main_title_logo=""):
     elements = []
     x = end_x = 0
@@ -32,18 +55,22 @@ def draw(matrix, main_title="", main_title_logo=""):
             y = end_y + Config.space_height * 2 + Config.container_title_height
         x = end_x + Config.space_width * 2
 
+    fix_broken_container_ids(elements)
+
     appstate = {
         "gridSize": 20,
         "gridStep": 5,
         "gridModeEnabled": False,
         "viewBackgroundColor": Config.background_color
     }
-    return json.dumps({"type": "excalidraw",
+
+    json_output = json.dumps({"type": "excalidraw",
                            "version": 2,
                            "source": "https://excalidraw.com",
                            "elements": elements,
                            "appState": appstate,
                            "files": Utils.images_catalog}, indent=2)
+    return json_output.replace('\\\\n', '\\n')
 
 
 if __name__ == "__main__":

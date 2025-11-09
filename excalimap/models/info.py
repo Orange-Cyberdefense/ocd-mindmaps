@@ -1,4 +1,5 @@
 import math
+import re
 
 from config import Config
 from models.arrow import Arrow
@@ -19,18 +20,27 @@ class Info(MapObject):
 
     def draw(self, x, y):
         elements = []
+
+        lines = re.split(r'(?<!\\)\n', self.text)
+        longest_line = max(lines, key=lambda s: Utils.len_text(s))
+        longest_len = Utils.len_text(longest_line)
+
         # end_x and end_y will be minimum to title draw size
-        calc_width = math.ceil(Utils.len_text(self.text) * 10)
+        calc_width = math.ceil(longest_len * 10)
         self.object_width = max(calc_width,self.object_width)
 
+        line_count = self.text.count("\n") + 1
+        per_line = 25
+        dynamic_height = max(Config.info_height, line_count * per_line)
+
         end_x = x + self.object_width
-        end_y = y + Config.info_height
+        end_y = y + dynamic_height
 
         # draw all the content
         elements, end_x, end_y = self.draw_child(elements, x, y, end_x, end_y)
         total_size = end_y - y
         center_y = y + total_size / 2
-        title_y = center_y - Config.info_height / 2
+        title_y = center_y - dynamic_height / 2
         # draw out
         elements, end_x, end_y = self.draw_out(elements, y, center_y, total_size, end_x, end_y, Config.default_out_color)
 
@@ -46,7 +56,7 @@ class Info(MapObject):
                        "x": x,
                        "y": title_y,
                        "width": self.object_width,
-                       "height": Config.info_height,
+                       "height": dynamic_height,
                        "angle": 0,
                        "strokeColor": Config.border_color,
                        "backgroundColor": background_color,
@@ -73,7 +83,7 @@ class Info(MapObject):
                        "x": x + 5,
                        "y": title_y,
                        "width": self.object_width-5,
-                       "height": Config.info_height,
+                       "height": dynamic_height,
                        "angle": 0,
                        "strokeColor": text_color,
                        "backgroundColor": None,
