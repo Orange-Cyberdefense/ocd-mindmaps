@@ -1,13 +1,13 @@
 # Valid user (no password)
 
 ## Password Spray
-- Get password policy  (you need creds,but you should get the policy  first to avoid locking accounts)
+- Get password policy  (you need creds, but you should get the policy  first to avoid locking accounts)
   - default policy
     - `nxc smb <dc_ip> -u '<user>' -p '<password>' --pass-pol`
 [https://www.thehacker.recipes/ad/recon/password-policy](https://www.thehacker.recipes/ad/recon/password-policy)
     - `Get-ADDefaultDomainPasswordPolicy`
     - `ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> domain_policy`
-  - Fined Policy (Privileged)
+  - Fine-Grained Policy (Privileged)
     - `ldapsearch-ad.py --server <dc> -d <domain> -u <user> -p <pass> --type pass-pols`
     - `Get-ADFineGainedPasswordPolicy -filter *`
     - `ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> pso # can also be runned with a low priv account but less information will be available`
