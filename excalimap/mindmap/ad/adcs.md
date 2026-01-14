@@ -54,7 +54,7 @@
         - error, but save private key and get issue request
     - Issue request
       - `certipy ca -u <user>@<domain> -p '<password>' -ca <ca_name> -issue-request <request_id>`
-        - `certipy req -u <user>@<domain> -p '<password>'  -ca <ca_name> -retreive <request_id>` >>> Pass the certificate
+        - `certipy req -u <user>@<domain> -p '<password>'  -ca <ca_name> -retrieve <request_id>` >>> Pass the certificate
 
 ## Vulnerable PKI Object access control
 

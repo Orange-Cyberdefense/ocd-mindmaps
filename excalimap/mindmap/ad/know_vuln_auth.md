@@ -1,4 +1,4 @@
-# Know vulnerabilities authenticated
+# Known vulnerabilities authenticated
 
 ## MS14-068 >>> PTT >>> Domain admin || Admin
 - `findSMB2UPTime.py <ip>`

